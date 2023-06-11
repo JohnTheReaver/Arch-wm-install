@@ -3,6 +3,6 @@ These two scripts when run will install wm, dmenu &amp; st on your system and co
 
 ## Credits
 Credits go to Bugswriter: 
-https://github.com/bugswriter
-https://www.youtube.com/@bugswriter_
-https://www.bugswriter.com/
+- https://github.com/bugswriter
+- https://www.youtube.com/@bugswriter_
+- https://www.bugswriter.com/
