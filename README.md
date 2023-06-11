@@ -15,7 +15,7 @@ Feel free to modify the code and distribute it under your own name. Contribution
 
 ## Credits
 
-Special thanks to Bugswriter for their contributions and inspiration:
+Special thanks to Bugswriter for providing an easy to follow install video and for inspiration:
 
 - GitHub: [https://github.com/bugswriter](https://github.com/bugswriter)
 - YouTube: [https://www.youtube.com/@bugswriter](https://www.youtube.com/@bugswriter)
