@@ -1,0 +1,67 @@
+#!/bin/bash
+
+#display figlet bulbhead font:
+echo ' ____  ____  ___  ____     ____  _  _  ___  ____   __    __    __   
+(  _ \(_  _)/ __)( ___)___(_  _)( \( )/ __)(_  _) /__\  (  )  (  )  
+ )   / _)(_( (__  )__)(___)_)(_  )  ( \__ \  )(  /(__)\  )(__  )(__ 
+(_)\_)(____)\___)(____)   (____)(_)\_)(___/ (__)(__)(__)(____)(____)
+'
+
+#ask for root perms:
+echo "This script requires root."
+sudo echo ""
+
+#remove exec dwm from ~/.xinitrc:
+echo "Removing exec dwm from ~/.xinitrc and adding it back later..."
+sed -i '/exec dwm/d' ~/.xinitrc
+
+#create wallpaper folder & download default background:
+echo "Making directory: ~/.local/src/wallpapers/ ..."
+mkdir -p ~/.local/src/wallpapers/
+echo "Getting default background for this rice..."
+curl -o ~/.local/src/wallpapers/background.jpg "https://blog.petehouston.com/wp-content/uploads/2017/08/linux.jpg"
+
+#adjust screensize to 1920x1080 & add it to ~/.xinitrc:
+echo "Setting screensize to 1080p..."
+output_name=$(xrandr | awk 'NR==2 {print $1}')
+xrandr --output $output_name --mode 1920x1080
+echo "Adding set screensize command to ~/.xinitrc ..."
+echo "xrandr --output $output_name --mode 1920x1080" >> ~/.xinitrc
+
+#set background & add it to ~/.xinitrc:
+echo "Setting default wallpaper..."
+xwallpaper --zoom ~/.local/src/wallpapers/background.jpg
+
+#set color scheme & add it to ~/.xinitrc:
+echo "Change color theme depending on background..."
+wal -i ~/.local/src/wallpapers/background.jpg
+echo "Changing dmenu to new color theme..."
+xdotool key super+F5
+
+#create & add newlook to ~/.xinitrc:
+echo "Creating a new command called newlook..."
+rm newlook > /dev/null
+echo '#!/bin/sh' >> newlook
+echo 'mywall=$(find ~/.local/src/wallpapers/ -type f -iname "*.jpg" -o -iname "*.png" | shuf -n 1)' >> newlook
+echo 'xwallpaper --zoom $mywall' >> newlook
+echo 'wal -c' >> newlook
+echo 'wal -i $mywall' >> newlook
+echo 'xdotool key super+F5' >> newlook
+sudo chmod +x newlook
+sudo cp newlook /usr/bin/
+rm newlook > /dev/null
+echo 'Writing command: "newlook" to ~/.xinitrc ...'
+echo "newlook &" >> ~/.xinitrc
+
+#install and configure zsh & add xcompmgr to ~/.xinitrc:
+echo "Adding transparency to terminal..."
+xcompmgr &
+echo "writing command to ~/.xinitrc ..."
+echo "xcompmgr &" >> ~/.xinitrc
+echo "Installing Oh My Zsh! ..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+#add exec dwm to the last line of ~/.xinitrc:
+echo 'Adding "exec dwm" back to ~/.xinitrc ...'
+echo "exec dwm" >> ~/.xinitrc
