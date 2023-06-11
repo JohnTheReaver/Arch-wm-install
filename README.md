@@ -16,7 +16,7 @@ Feel free to modify the code and distribute it under your own name. Contribution
 ## Credits
 
 Special thanks to Bugswriter for providing an easy to follow install video and for inspiration:
-
+- Video: [https://www.youtube.com/watch?v=SRqVuAUP2N0](https://www.youtube.com/watch?v=SRqVuAUP2N0)
 - GitHub: [https://github.com/bugswriter](https://github.com/bugswriter)
 - YouTube: [https://www.youtube.com/@bugswriter](https://www.youtube.com/@bugswriter)
 - Website: [https://www.bugswriter.com/](https://www.bugswriter.com/)
