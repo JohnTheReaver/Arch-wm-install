@@ -1,15 +1,24 @@
-# Arch wm install
-***These two scripts when run will install wm, dmenu &amp; st on your system and configure the wm.***
+# Arch WM Installation
 
-After installing Arch linux to your system you can clone this repository and first execute *i*.
-When the first script is done just type startx and then open up a new terminal using super + enter and execute *o*.
-That will configure the rice correctly.
+**Note:** These two scripts will install a window manager (WM), along with dmenu and st, on your system and configure the WM.
 
-## Free & open source 
-Feel free to modify the code and publish it under your name.
+After installing Arch Linux on your system, you can clone this repository and follow these steps:
+
+1. Execute the first script by running `./i`.
+2. Once the first script finishes, type `startx` to start the X server.
+3. Open a new terminal using the key combination `Super + Enter`.
+4. Execute the second script by running `./o`. This will correctly configure the rice.
+
+## Free and Open Source
+
+Feel free to modify the code and distribute it under your own name. Contributions are welcome.
 
 ## Credits
-Credits go to Bugswriter: 
-- https://github.com/bugswriter
-- https://www.youtube.com/@bugswriter
-- https://www.bugswriter.com/
+
+Special thanks to Bugswriter for their contributions and inspiration:
+
+- GitHub: [https://github.com/bugswriter](https://github.com/bugswriter)
+- YouTube: [https://www.youtube.com/@bugswriter](https://www.youtube.com/@bugswriter)
+- Website: [https://www.bugswriter.com/](https://www.bugswriter.com/)
+
+Feel free to customize the text further to align with your specific requirements.
